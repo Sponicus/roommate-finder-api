@@ -15,7 +15,8 @@ CREATE TABLE users (
   contact_info VARCHAR(255),
   user_image VARCHAR(255), --fix this base64string Node.js 
   bio VARCHAR(255),
-  location VARCHAR(255)
+  location VARCHAR(255),
+  gender BOOLEAN SET DEFAULT NULL
 );
 
 CREATE TABLE preferences (
