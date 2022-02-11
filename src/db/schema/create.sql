@@ -1,0 +1,37 @@
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS preferences CASCADE;
+DROP TABLE IF EXISTS likes CASCADE;
+DROP TABLE IF EXISTS matches CASCADE;
+
+-- check image
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY NOT NULL,
+  first_name VARCHAR(255) NOT NULL,
+  last_name VARCHAR(255) NOT NULL,
+  user_name VARCHAR(255) NOT NULL,
+  phone_number VARCHAR(10),
+  email VARCHAR(255) NOT NULL,
+  password VARCHAR(255) NOT NULL,
+  contact_info VARCHAR(255),
+  image VARCHAR(255), --fix this
+  bio VARCHAR(255),
+  location VARCHAR(255)
+);
+
+CREATE TABLE preferences (
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users(id) ON DELETE CASCADE
+);
+
+CREATE TABLE likes (
+  id SERIAL PRIMARY KEY NOT NULL,
+  liker INTEGER REFERENCES users(id) ON DELETE CASCADE
+  likee INTEGER REFERENCES users(id) ON DELETE CASCADE
+);
+
+-- get mentor help
+CREATE TABLE matches (
+  id SERIAL PRIMARY KEY NOT NULL,
+  like_id INTEGER REFERENCES likes(id) ON DELETE CASCADE
+  like_id INTEGER REFERENCES likes(id) ON DELETE CASCADE
+);
