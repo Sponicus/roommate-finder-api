@@ -14,12 +14,12 @@ VALUES ('Mariah', 'Carey', 'MCarey', '1020304050', 'mcarey@gmail.com', 'all1want
 
 ('Blake', 'Lively', 'blake_lively', '3478901022', 'blake_lively@reynolds.com', 'Dinosaurs', '@jeff_goldblum', 'userimage', 'Looking to find a temporary roommate with kids who can hang out with my kids while I stay in chicago.', 'Chicago', 'Female'),
 
-('Nina', 'Dobrev', 'nina_dobrev', '4564443877', 'nina_dobrev@vamp.com', 'ninaClassic', '@ninaDobrev', 'userimage', 'Looking for a roommate who is participating in this year’s olympics', 'British Columbia', 'Female'),
+('Nina', 'Dobrev', 'nina_dobrev', '4564443877', 'nina_dobrev@vamp.com', 'ninaClassic', '@ninaDobrev', 'userimage', 'Looking for a roommate who is participating in the olympics', 'British Columbia', 'Female'),
 
-('Tom', 'Cruise', 'Need4Speed', '5648651182', 'mr.cruise.is.awesome@gmail.com', 'need2speed', 'Twitter: ‘@tomcruise’', 'userimage', 'I am an active health and fitness nut looking for roomates who feel the need to continue to push themselves everyday in every field towards excellence. If this is you please reach out to me.', 'Florida', 'Male'),
+('Tom', 'Cruise', 'Need4Speed', '5648651182', 'mr.cruise.is.awesome@gmail.com', 'need2speed', 'Twitter: @tomcruise', 'userimage', 'I am an active health and fitness nut looking for roomates who feel the need to continue to push themselves everyday in every field towards excellence. If this is you please reach out to me.', 'Florida', 'Male'),
 
-('Emma', 'Watson', 'Weasley_Fan504', '6595469987', 'hermoine.granger@gmail.com', 'occulus_repairo', 'Twitter: ‘@emmawatson’', 'userimage', 'placeholder data', 'Toronto', 'Female'),
+('Emma', 'Watson', 'Weasley_Fan504', '6595469987', 'hermoine.granger@gmail.com', 'occulus_repairo', 'Twitter: @emmawatson', 'userimage', 'placeholder data', 'Toronto', 'Female'),
 
-('Jensen', 'Ackles', 'Dean_Winchester_001', '6595469987', 'dean.winchester@gmail.com', 'wakeupsammie', 'Twitter: ‘@jensenackles’', 'userimage', 'placeholder data', 'Vancouver', 'Male'),
+('Jensen', 'Ackles', 'Dean_Winchester_001', '6595469987', 'dean.winchester@gmail.com', 'wakeupsammie', 'Twitter: @jensenackles', 'userimage', 'placeholder data', 'Vancouver', 'Male'),
 
-('Olivia', 'Wilde', 'tron_girl_1337', '2265981337', 'ai.tron.girl@gmail.com', 'cowboys&aliens', 'Twitter: ‘@oliviawilde’', 'userimage', 'placeholder data', 'Ottawa', 'Female')
+('Olivia', 'Wilde', 'tron_girl_1337', '2265981337', 'ai.tron.girl@gmail.com', 'cowboys&aliens', 'Twitter: @oliviawilde', 'userimage', 'placeholder data', 'Ottawa', 'Female')
