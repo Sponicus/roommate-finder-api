@@ -13,7 +13,7 @@ CREATE TABLE users (
   email VARCHAR(255) NOT NULL,
   password VARCHAR(255) NOT NULL,
   contact_info VARCHAR(255),
-  image VARCHAR(255), --fix this
+  user_image VARCHAR(255), --fix this base64string Node.js 
   bio VARCHAR(255),
   location VARCHAR(255)
 );
@@ -33,8 +33,12 @@ CREATE TABLE likes (
 );
 
 -- get mentor help
-CREATE TABLE matches (
-  id SERIAL PRIMARY KEY NOT NULL,
-  like_id INTEGER REFERENCES likes(id) ON DELETE CASCADE
-  like_id INTEGER REFERENCES likes(id) ON DELETE CASCADE
-);
+
+-- HELP WITH CORELATED SUBQUERIES FOR LIKES TABLE
+
+
+-- CREATE TABLE matches (
+--   id SERIAL PRIMARY KEY NOT NULL,
+--   like_id INTEGER REFERENCES likes(id) ON DELETE CASCADE
+--   like_id INTEGER REFERENCES likes(id) ON DELETE CASCADE
+-- );
