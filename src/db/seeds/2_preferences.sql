@@ -1,5 +1,5 @@
-INSERT INTO preferences (user_id, male, female, pet_friendly)
-VALUES (1, TRUE, TRUE, FALSE), (2, TRUE, FALSE, TRUE), (3, FALSE, TRUE, FALSE)
+-- INSERT INTO preferences (user_id, male, female, pet_friendly)
+-- VALUES (1, TRUE, TRUE, FALSE), (2, TRUE, FALSE, TRUE), (3, FALSE, TRUE, FALSE)
 
 INSERT INTO preferences (user_id, male, female, other, pet_friendly)
 VALUES (1, TRUE, TRUE, TRUE, TRUE), (2, TRUE, TRUE, TRUE, FALSE), (3, FALSE, TRUE, TRUE, TRUE), (4, TRUE, FALSE, TRUE, TRUE), 
