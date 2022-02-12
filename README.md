@@ -6,4 +6,5 @@ the back end for the room mate finder app
  - run `npm install`
  
  ### To Seed the Database
- - Make a GET request to /api/debug/reset
+ - CREATE A DATABASE CALLED `roomies`
+ - RUN `npm resetdb`
