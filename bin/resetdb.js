@@ -1,9 +1,5 @@
 // load .env data into process.env
 require('dotenv').config({ path: './.env' })
-<<<<<<< HEAD
-
-=======
->>>>>>> 84fc5ee9b654bb07ce50241fb2ff4adadb063552
 console.log(process.cwd())
 // other dependencies
 const fs = require('fs');
