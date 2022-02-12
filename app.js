@@ -7,10 +7,13 @@ const dotenv = require('dotenv').config;
   
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
-
-
+const profilesRouter = require('./routes/profiles');
+const findRoommatesRouter = require('./routes/find_roommates');
+const matchesRouter =  require('./matches');
 
 const app = express();
+
+const db = require('./src/db');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -24,6 +27,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/profiles', profilesRouter);
+app.use('/find_roommates', findRoommatesRouter);
+app.use('/matches', matchesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
