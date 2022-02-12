@@ -1,5 +1,5 @@
 // load .env data into process.env
-require('dotenv').config({ path: '/vagrant/w11/roommate-finder-api/.env' })
+require('dotenv').config("./env")
 console.log(process.cwd())
 // other dependencies
 const fs = require('fs');
