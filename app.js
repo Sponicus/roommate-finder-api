@@ -39,7 +39,7 @@ app.use('/', indexRouter);
 app.use('/api/users', usersRouter(db));
 app.use('/api/profiles', profilesRouter);
 // app.use('/api/find_roommates', findRoommatesRouter);
-app.use('/api/matches', matchesRouter);
+app.use('/api/matches', matchesRouter(db));
 app.use('/api/signup', resgisterRouter(db));
 app.use('/api/login', loginRouter(db));
 app.use('/api/logout', logoutRouter(db));

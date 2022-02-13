@@ -6,7 +6,7 @@ the back end for the room mate finder app
  - run `npm install`
  
  ### To Seed the Database
- - CREATE A DATABASE CALLED `roomies`
+ - CREATE A DATABASE CALLED `roomies` everytime you want to run the app. Docker will delete the data when closed.
  - RUN `npm resetdb`
  
  ## install docker && create roomies DB in psql w/ docker
