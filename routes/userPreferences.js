@@ -5,7 +5,7 @@ module.exports = (db) => {
   router.get("/", (req,res) => {
     // const user = req.session.user_id;
       const user = 7;
-      db.query(`SELECT male, female, other, pet_friendly FROM preferences WHERE user_id = $1`, [])
+      db.query(`SELECT male, female, other, pet_friendly FROM preferences WHERE user_id = $1`, [user])
       .then(data => {
           const preferences = data.rows;
           res.json({preferences});
