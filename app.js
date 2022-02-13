@@ -13,6 +13,8 @@ const matchesRouter =  require('./routes/matches');
 const resgisterRouter = require('./routes/register');
 const loginRouter = require('./routes/login');
 const logoutRouter = require('./routes/logout');
+const userProfileRouter = require('./routes/userProfile');
+const userPreferencesRouter = require('./routes/userPreferences');
 
 const app = express();
 
@@ -41,6 +43,8 @@ app.use('/api/matches', matchesRouter);
 app.use('/api/signup', resgisterRouter(db));
 app.use('/api/login', loginRouter(db));
 app.use('/api/logout', logoutRouter(db));
+app.use('/api/userProfile', userProfileRouter(db));
+app.use('/api/userPreferences', userPreferencesRouter(db));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
