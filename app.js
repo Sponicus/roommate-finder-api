@@ -11,7 +11,8 @@ const profilesRouter = require('./routes/profiles');
 // const findRoommatesRouter = require('./routes/find_roommates');
 const matchesRouter =  require('./routes/matches');
 const resgisterRouter = require('./routes/register');
-
+const loginRouter = require('./routes/login');
+const logoutRouter = require('./routes/logout');
 
 const app = express();
 
@@ -37,7 +38,9 @@ app.use('/api/users', usersRouter(db));
 app.use('/api/profiles', profilesRouter);
 // app.use('/api/find_roommates', findRoommatesRouter);
 app.use('/api/matches', matchesRouter);
-app.use('/api/signup', resgisterRouter(db))
+app.use('/api/signup', resgisterRouter(db));
+app.use('/api/login', loginRouter(db));
+app.use('/api/logout', logoutRouter(db));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
