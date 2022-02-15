@@ -38,7 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter(db));
 app.use('/api/profiles', profilesRouter);
-app.use('/api/roomies', roomiesRouter);
+app.use('/api/roomies', roomiesRouter(db));
 app.use('/api/matches', matchesRouter(db));
 app.use('/api/signup', resgisterRouter(db));
 app.use('/api/login', loginRouter(db));
