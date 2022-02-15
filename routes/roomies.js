@@ -1,19 +1,26 @@
 const express = require('express');
+const res = require('express/lib/response');
 const router = express.Router();
 
 /* GET matches listing. */
 module.exports = (db) => {
   router.get('/', (req, res,) => {
-    console.log("FETCH ME!!!!")
     // const user = req.session.user_id;
     const user = 1;
+    // set a default value so it can be changed AND called at the end of the async function 
+    let userGender = null;
+    // Get user's preferences
     db.query(`
-      SELECT user_id, users.user_name, male, female, other, pet_friendly
+      SELECT user_id, users.user_name, users.gender, male, female, other, pet_friendly
       FROM preferences
       JOIN users ON users.id = user_id
       WHERE user_id = $1;`, [user])
+      //get the info for potential roomies
     .then( data => {
-      const {male, female, other, pet_friendly} = data.rows[0];
+      const {male, female, other, pet_friendly, gender} = data.rows[0];
+      console.log(gender)
+      //set user's gender to what they have stored in their profile.
+      userGender = gender;
       console.log('this is the user -->', user)
       console.log('We are on the second promise');
       return db.query(`
@@ -27,20 +34,9 @@ module.exports = (db) => {
       AND users.id != $1
       ORDER BY user_id;`, [user, male, female, other, pet_friendly]) 
     })
+    // filter out roomies who the user isn't within their preferences
     .then( data => {
       const roomiePreferences = data.rows;
-      console.log('We are on the Third promise');
-      const userGender = false; // MUST FIND AWAY TO GET THIS DYNAMICALLY!!!!!
-      
-      
-      // const findGender = (person) => {
-      //   db.query(`
-      //     SELECT gender
-      //     FROM users
-      //     WHERE id = $1`, [person]);
-      // }    
-      // console.log(findGender(2))
-      
       
       const filteredPreferences = (gender) => {
         if(gender === false) {
@@ -60,6 +56,19 @@ module.exports = (db) => {
     });
   })
   
+  router.post('/', (req,res) => {
+    // const user = req.session.user_id;
+    const user = 1;
+    // const likeeId = req.body.id //could be wrong and needs confirmation
+    const likeeId = 12
+    console.log(likeeId);
+    
+    db.query(`INSERT INTO likes (liker, likee)
+    VALUES ($1, $2)` [user, likeeId])
+    .catch((err) => {
+      res.send("Your request cannot be completed at this time"); //
+    })
+  })
   
   // REMEMBER TO MAKE POST REQUEST FOR YES SWIPE
   
