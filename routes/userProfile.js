@@ -16,7 +16,9 @@ module.exports = (db) => {
         const profile = data.rows;
         res.json({profile});
       })
-      .catch((err) => {res.send(err)})//we can update the error later
+      .catch((err) => {
+        res.status(422).send("something went wrong");// we can make this look pretty
+      });
 
     });
 
@@ -28,7 +30,7 @@ module.exports = (db) => {
       .then(profileRes => {
         res.redirect("/");
       })
-      .catch((err) => {res.send(err)})//we can update the error later
+      .catch((err) => {res.status(400).send("something went wrong")})//we can update the error later
 
     });
     

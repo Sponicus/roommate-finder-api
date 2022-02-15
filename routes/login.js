@@ -18,13 +18,13 @@ module.exports = (db) => {
     
     db.query(`SELECT id, email, password FROM users WHERE username = $1 AND password = $2`,[email, password])
     .then(userRes => {
-      // if (userRes.rows[0].id) {
-      //   req.session.user_id = userRes.rows[0].id
-      // }
+      if (userRes.rows[0].id) {
+        req.session.user_id = userRes.rows[0].id
+      }
       res.redirect("/");
     })
     .catch((err) => {
-      res.send("something went wrong");// we can make this look pretty
+      res.status(400).send("something went wrong");// we can make this look pretty
     })
   })
 

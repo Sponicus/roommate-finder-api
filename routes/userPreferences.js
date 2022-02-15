@@ -19,7 +19,7 @@ module.exports = (db) => {
         .then(preferencesRes => {
             res.redirect('/');
         })
-        .catch((err) => {res.send(err)}) //update error later/ 
+        .catch((err) => {res.status(400).send("something went wrong")}) //update error later/ 
     }) 
   });
   

@@ -52,7 +52,7 @@ module.exports = (db) => {
       res.json(filteredPreferences(userGender));
     })    
     .catch((err) => {
-      res.send("something went wrong");// we can make this look pretty
+      res.status(422).send("something went wrong");// we can make this look pretty
     });
   })
   
@@ -66,7 +66,7 @@ module.exports = (db) => {
     db.query(`INSERT INTO likes (liker, likee)
     VALUES ($1, $2)` [user, likeeId])
     .catch((err) => {
-      res.send("Your request cannot be completed at this time"); //
+      res.status(400).send("Your request cannot be completed at this time"); //
     })
   })
   

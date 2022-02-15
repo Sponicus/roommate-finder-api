@@ -21,7 +21,7 @@ module.exports = (db) => {
       res.redirect("/");
     })
     .catch((err) => {
-      res.send("something went wrong");// we can make this look pretty
+      res.status(400).send("something went wrong");// we can make this look pretty
     })
   })
 
