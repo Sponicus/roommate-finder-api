@@ -12,10 +12,15 @@ module.exports = (db) => {
       })
       .catch((err) => {res.send(err)})     
 
-    router.post('/', (req, res) => {
+    router.put('/', (req, res) => {
         const user = 7; 
         const {male, female, other, pet_friendly} = req.body;
-        db.query(`INSERT INTO users (male, female, other, pet_friendly) VALUES ($1, $2, $3, $4)`, [male, female, other, pet_friendly])
+        db.query(`UPDATE preferences
+        SET male = $1
+        SET female = $2
+        SET other = $3
+        SET pet_friendly = $4
+        WHERE user_id = $5;`, [male, female, other, pet_friendly, user])
         .then(preferencesRes => {
             res.redirect('/');
         })
