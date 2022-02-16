@@ -3,8 +3,8 @@ const router  = express.Router();
 
 module.exports = (db) => {
     router.get("/", (req,res) => {
-      // const user = req.session.user_id;
-      const user = 5; // for testing purposes
+      const user = req.session.user_id;
+      // const user = 5; // for testing purposes
       db.query(`SELECT first_name, last_name, phone_number, email, contact_info, user_image, bio, location, gender FROM users WHERE id = $1`, [user])
       .then(data => {
         const profile = data.rows;
@@ -17,8 +17,8 @@ module.exports = (db) => {
     });
 
     router.post("/", (req,res) => {
-      // const user = req.session.user_id;
-      const user = 5; // for testing purposes
+      const user = req.session.user_id;
+      // const user = 5; // for testing purposes
       const {first_name, last_name, phone_number, email, contact_info, user_image, bio, location, gender} = req.body;
       db.query(`UPDATE users 
       SET first_name = $1, last_name = $2, phone_number = $3, email = $4, contact_info = $5, user_image = $6, bio = $7, location = $8, gender = $9
