@@ -5,8 +5,8 @@ const router = express.Router();
 /* GET matches listing. */
 module.exports = (db) => {
   router.get('/', (req, res,) => {
-    // const user = req.session.user_id;
-    const user = 1;
+    const user = req.session.user_id;
+    // const user = 1;
     // set a default value so it can be changed AND called at the end of the async function 
     let userGender = null;
     // Get user's preferences
@@ -57,8 +57,8 @@ module.exports = (db) => {
   })
   
   router.post('/', (req,res) => {
-    // const user = req.session.user_id;
-    const user = 1;
+    const user = req.session.user_id;
+    // const user = 1;
     // const likeeId = req.body.id //could be wrong and needs confirmation
     const likeeId = 12
     console.log(likeeId);
