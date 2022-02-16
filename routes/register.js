@@ -21,9 +21,9 @@ module.exports = (db) => {
     VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) 
     RETURNING id;`, [firstName, lastName, userName, phoneNumber, email, password, contactInfo, userImage, bio, location, gender])
     .then(userRes => {
-      user = userRes.rows[0].id;
+      user_id = userRes.rows[0].id;
       db.query(`INSERT INTO preferences (user_id) 
-      VALUES ($1);`, [user])
+      VALUES ($1);`, [user_id])
       .then(response => res.redirect("/"))
     })
     .catch((err) => {
