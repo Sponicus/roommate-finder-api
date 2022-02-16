@@ -7,8 +7,7 @@ const logger = require('morgan');
 const dotenv = require('dotenv').config('./env');
   
 const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-const profilesRouter = require('./routes/profiles');
+// const usersRouter = require('./routes/users');;
 const roomiesRouter = require('./routes/roomies');
 const matchesRouter =  require('./routes/matches');
 const registerRouter = require('./routes/register');
@@ -38,15 +37,14 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/api/users', usersRouter(db));
-app.use('/api/profiles', profilesRouter);
+// app.use('/api/users', usersRouter(db));
 app.use('/api/roomies', roomiesRouter(db));
 app.use('/api/matches', matchesRouter(db));
 app.use('/api/register', registerRouter(db));
 app.use('/api/login', loginRouter(db));
 app.use('/api/logout', logoutRouter(db));
-app.use('/api/userProfile', userProfileRouter(db));
-app.use('/api/userPreferences', userPreferencesRouter(db));
+app.use('/api/user/profile', userProfileRouter(db));
+app.use('/api/user/preferences', userPreferencesRouter(db));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
