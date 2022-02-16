@@ -5,7 +5,7 @@ module.exports = (db) => {
     router.get("/", (req,res) => {
       const user = req.session.user_id;
       // const user = 5; // for testing purposes
-      db.query(`SELECT first_name, last_name, phone_number, email, contact_info, user_image, bio, location, gender FROM users WHERE id = $1`, [user])
+      db.query(`SELECT first_name, last_name, user_name, phone_number, email, contact_info, user_image, bio, location, gender FROM users WHERE id = $1`, [user])
       .then(data => {
         const profile = data.rows;
         res.json({profile});
