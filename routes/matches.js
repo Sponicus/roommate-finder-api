@@ -4,8 +4,8 @@ const router = express.Router();
 /* GET matches listing. */
 module.exports = (db) => {
   router.get('/', (req, res,) => {
-    // const user = req.session.user_id;
-    const user = 1;
+    const user = req.session.user_id;
+    // const user = 1;
     db.query(
       `SELECT users.first_name, users.last_name, users.phone_number, users.email, users.contact_info, users.user_image, users.bio, users.location, users.gender
       FROM likes l1
