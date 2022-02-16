@@ -26,7 +26,9 @@ module.exports = (db) => {
       // const user = req.session.user_id;
       const user = 5; // for testing purposes
       const {first_name, last_name, phone_number, email, contact_info, user_image, bio, location, gender} = req.body;
-      db.query(`INSERT INTO users (id, first_name, last_name, phone_number, email, contact_info, user_image, bio, location, gender) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`, [id, first_name, last_name, phone_number, email, contact_info, user_image, bio, location, gender])
+      db.query(`UPDATE users 
+      SET first_name = $1, last_name = $2, phone_number = $3, email = $4, contact_info = $5, user_image = $6, bio = $7, location = $8, gender = $9
+      WHERE id = $10;`, [first_name, last_name, phone_number, email, contact_info, user_image, bio, location, gender, user])
       .then(profileRes => {
         res.redirect("/");
       })
