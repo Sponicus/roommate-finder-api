@@ -1,3 +1,4 @@
+const { response } = require('express');
 const express = require('express');
 const router  = express.Router();
 
@@ -16,9 +17,14 @@ module.exports = (db) => {
     console.log({firstName, lastName, userName, phoneNumber, email, password, contactInfo, userImage, bio, location, gender})
     ///////////////////////////////
     
-    db.query(`INSERT INTO users (first_name, last_name, user_name, phone_number, email, password, contact_info, user_image, bio, location, gender) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`, [firstName, lastName, userName, phoneNumber, email, password, contactInfo, userImage, bio, location, gender])
+    db.query(`INSERT INTO users (first_name, last_name, user_name, phone_number, email, password, contact_info, user_image, bio, location, gender) 
+    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11) 
+    RETURNING id;`, [firstName, lastName, userName, phoneNumber, email, password, contactInfo, userImage, bio, location, gender])
     .then(userRes => {
-      res.redirect("/");
+      user = userRes.rows[0].id;
+      db.query(`INSERT INTO preferences (user_id) 
+      VALUES ($1);`, [user])
+      .then(response => res.redirect("/"))
     })
     .catch((err) => {
       res.status(400).send("something went wrong");// we can make this look pretty
@@ -27,3 +33,6 @@ module.exports = (db) => {
 
   return router;
 };
+
+// INSERT INTO users (first_name, last_name, user_name, email, password) VALUES ('Andrew', 'Spon', 'Sponicus', 'sponicus@gmail.com', 'password') RETURNING id;
+// INSERT INTO preferences (user_id) VALUES (13);
