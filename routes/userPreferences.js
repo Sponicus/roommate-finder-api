@@ -3,8 +3,8 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req,res) => {
-    // const user = req.session.user_id;
-      const user = 7;
+    const user = req.session.user_id;
+      // const user = 11;
       db.query(`SELECT male, female, other, pet_friendly FROM preferences WHERE user_id = $1`, [user])
       .then(data => {
           const preferences = data.rows;
