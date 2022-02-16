@@ -16,7 +16,7 @@ module.exports = (db) => {
     console.log({email, password})
     ///////////////////////////////
     
-    db.query(`SELECT id, email, password FROM users WHERE username = $1 AND password = $2`,[email, password])
+    db.query(`SELECT id, email, password FROM users WHERE email = $1 AND password = $2`,[email, password])
     .then(userRes => {
       if (userRes.rows[0].id) {
         req.session.user_id = userRes.rows[0].id
