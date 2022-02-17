@@ -60,12 +60,16 @@ module.exports = (db) => {
     const user = req.session.user_id;
     // const user = 1;
     // const likeeId = req.body.id //could be wrong and needs confirmation
-    const likeeId = 12
+    const likeeId = req.body.user_id;
     console.log(likeeId);
     
     db.query(`INSERT INTO likes (liker, likee)
-    VALUES ($1, $2)` [user, likeeId])
+    VALUES ($1, $2);`, [user, likeeId])
+    .then(() => {
+      res.status(200).send('success');
+    })
     .catch((err) => {
+      console.log(err);
       res.status(400).send("Your request cannot be completed at this time"); //
     })
   })
