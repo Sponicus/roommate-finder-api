@@ -7,7 +7,7 @@ module.exports = (db) => {
     const user = req.session.user_id;
     // const user = 1;
     db.query(
-      `SELECT users.first_name, users.last_name, users.phone_number, users.email, users.contact_info, users.user_image, users.bio, users.location, users.gender
+      `SELECT users.id, users.first_name, users.last_name, users.phone_number, users.email, users.contact_info, users.user_image, users.bio, users.location, users.gender
       FROM likes l1
       JOIN likes l2 ON l1.liker = l2.likee
       JOIN users on users.id = l1.likee
