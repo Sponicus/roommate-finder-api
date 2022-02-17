@@ -21,7 +21,8 @@ module.exports = (db) => {
       if (userRes.rows[0].id) {
         req.session.user_id = userRes.rows[0].id
       }
-      res.redirect("/");
+      res.json(userRes.rows[0])
+      //res.redirect("/");
     })
     .catch((err) => {
       res.status(400).send("something went wrong");// we can make this look pretty
