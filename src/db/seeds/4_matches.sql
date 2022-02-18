@@ -11,7 +11,7 @@ one False
 M:F, F:T, O:T, P:T
   3 - Serena Williams
   7 - Blake Lively
-  8 - Emma Watson
+  10 - Emma Watson
 M:T, F:F, O:T, P:T
   4 - Robert Downey Jr
   5 - Jim Carey
