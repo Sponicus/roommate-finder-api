@@ -12,11 +12,11 @@ module.exports = (db) => {
       })
       .catch((err) => {res.send(err)})     
 
-    router.put('/', (req, res) => {
+    router.post('/', (req, res) => {
         const user = req.session.user_id; 
         const {male, female, other, pet_friendly} = req.body;
         db.query(`UPDATE preferences
-        SET male = $1, female = $2, SET other = $3, pet_friendly = $4
+        SET male = $1, female = $2, other = $3, pet_friendly = $4
         WHERE user_id = $5;`, [male, female, other, pet_friendly, user])
         .then(preferencesRes => {
             res.json(preferencesRes);
