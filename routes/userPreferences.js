@@ -13,16 +13,13 @@ module.exports = (db) => {
       .catch((err) => {res.send(err)})     
 
     router.put('/', (req, res) => {
-        const user = 7; 
+        const user = req.session.user_id; 
         const {male, female, other, pet_friendly} = req.body;
         db.query(`UPDATE preferences
-        SET male = $1
-        SET female = $2
-        SET other = $3
-        SET pet_friendly = $4
+        SET male = $1, female = $2, SET other = $3, pet_friendly = $4
         WHERE user_id = $5;`, [male, female, other, pet_friendly, user])
         .then(preferencesRes => {
-            res.redirect('/');
+            res.json(preferencesRes);
         })
         .catch((err) => {res.status(400).send("something went wrong")}) //update error later/ 
     }) 
