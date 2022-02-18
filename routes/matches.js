@@ -13,7 +13,8 @@ module.exports = (db) => {
       JOIN users on users.id = l1.likee
       WHERE l1.liker = l2.likee
       AND l2.liker = l1.likee
-      AND l1.liker = $1;`, [user])
+      AND l1.liker = $1
+      GROUP BY users.id;`, [user])
       .then(data => {
         const profile = data.rows;
         res.json({profile});
