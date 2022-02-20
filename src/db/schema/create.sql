@@ -8,9 +8,9 @@ CREATE TABLE users (
   id SERIAL PRIMARY KEY NOT NULL,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
-  user_name VARCHAR(255) NOT NULL,
+  user_name VARCHAR(255) UNIQUE NOT NULL,
   phone_number VARCHAR(10),
-  email VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
   contact_info VARCHAR(255),
   user_image VARCHAR(255), --fix this base64string Node.js 
