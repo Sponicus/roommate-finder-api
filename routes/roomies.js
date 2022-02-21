@@ -24,7 +24,7 @@ module.exports = (db) => {
       console.log('this is the user -->', user)
       console.log('We are on the second promise');
       return db.query(`
-      SELECT user_id, users.user_name, users.bio, male, female, other, pet_friendly
+      SELECT DISTINCT user_id, users.user_name, users.bio, male, female, other, pet_friendly
       FROM preferences
       JOIN users ON users.id = user_id
       FULL JOIN likes ON likee = users.id
