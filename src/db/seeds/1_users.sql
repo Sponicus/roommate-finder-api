@@ -22,6 +22,6 @@ VALUES ('Mariah', 'Carey', 'MCarey', '1020304050', 'mcarey@gmail.com', 'all1want
 
 ('Jensen', 'Ackles', 'Dean_Winchester_001', '6595469987', 'dean.winchester@gmail.com', 'wakeupsammie', 'Twitter: @jensenackles', 'https://i.imgur.com/vwOE7Ax.jpeg', 'Going on a family trip with my brother, looking for someone to hold the fort down. Just don''t touch my stuff.', 'Vancouver', TRUE),
 
-('Olivia', 'Wilde', 'tron_girl_1337', '2265981337', 'ai.tron.girl@gmail.com', 'cowboys&aliens', 'Twitter: @oliviawilde', 'https://i.imgur.com/5UfwI.jpeg', 'Looking for roomies who love 1980s arcade games. I already have a place and just need someone to rent the other room!', 'Ottawa', FALSE)
+('Olivia', 'Wilde', 'tron_girl_1337', '2265981337', 'ai.tron.girl@gmail.com', 'cowboys&aliens', 'Twitter: @oliviawilde', 'https://i.imgur.com/5UfwI.jpeg', 'Looking for roomies who love 1980s arcade games. I already have a place and just need someone to rent the other room!', 'Ottawa', FALSE),
 
-('Lighthouse', 'Labber', 'lighthouse_labber2022', '5466651227', 'lighthouse_labber2022@lighthouselabs.com', 'labber', 'Twitter: @lighthouselabber2022', 'https://www.zachlevy.me/static/media/lighthouse_labs_logo_1024x512.c4b852ba.png', 'Toronto', NULL)
+('Lighthouse', 'Labber', 'lighthouse_labber2022', '5466651227', 'lighthouse_labber2022@lighthouselabs.com', 'labber', 'Twitter: @lighthouselabber2022', 'https://www.zachlevy.me/static/media/lighthouse_labs_logo_1024x512.c4b852ba.png','I''m a lighthouse labber', 'Toronto', NULL)
