@@ -4,23 +4,13 @@ VALUES ('Mariah', 'Carey', 'MCarey', '1020304050', 'mcarey@gmail.com', 'all1want
 
 ('Eddie', 'Murphy', 'Eddie_Murphy', '2003004001', 'eddie@emurphy.com', 'password1', '@eddiemurphy', 'https://i.imgur.com/lOiqUWX.gif', 'Looking for that roommate who is fun, considerate and has a sense of humor? So am I!', 'Beverly Hills', TRUE), 
 
-<<<<<<< HEAD
-('Serena', 'Williams', 'tennis_pro', '2022202111', 's.williams@gmail.com', 'passw0rd2', '@serenawilliams', 'https://i.imgur.com/22N92ON.jpeg', 'I live an active  and healthy lifestyle. I play competitive sports and am seeking a roommate who is responsible and can appreciate striving for excellence', 'NYC', FALSE),
-=======
 ('Serena', 'Williams', 'tennis_pro', '2022202111', 's.williams@gmail.com', 'passw0rd2', '@serenawilliams', 'https://i.imgur.com/GDTy5Gm.jpg', 'I live an active and healthy lifestyle. I play competitive sports and am seeking a roommate who is responsible and can appreciate striving for excellence', 'Miami', FALSE),
->>>>>>> 4f1fe3b375a2ee3ba00158666b3e85b4d48b64e3
 
 ('Robert', 'Downey Jr', 'RDJ', '1234554321', 'robertDJ@yahoo.com', '1ronm@n', '@RobertDowneyJr', 'https://i.imgur.com/dUcAYYc.jpg', 'I''m your ideal roommate, enough about me. How about you? I''m looking for a roommate with a good head on their shoulders, doesn''t mind the occassional impromptu party and respects each other''s privacy', 'East Hampton', TRUE), 
 
-<<<<<<< HEAD
-('Jim', 'Carrey', 'Jim_Carrey', '1235678921', 'jim_carrey@wise.com', 'oneForall', '@JimCarreyOnline', 'https://i.imgur.com/7KICHYq.jpeg', 'Looking for a roommate temporarily while I visit LA, need someone who can watch over my dogs while I am away. Love to paint', 'Los Angeles', TRUE), 
-
-('Jeff', 'Goldblum', 'Jeff_Goldblum', '9098621232', 'jeff_goldblum@jurrassic.com', 'Dinosaurs', '@jeffgoldblum', 'https://i.imgur.com/XydNcOT.jpeg', 'My house got destroyed by a T-Rex. Looking for a roommate who can handle my humor and safeguard my belongings while I save the world', 'San Francisco', TRUE),
-=======
 ('Jim', 'Carrey', 'Jim_Carrey', '1235678921', 'jim_carrey@wise.com', 'oneForall', '@JimCarrey', 'https://i.imgur.com/7KICHYq.jpeg', 'Looking for a roommate temporarily while I visit LA, need someone who can watch over my dogs while I am away. Love to paint', 'Los Angeles', TRUE), 
 
 ('Jeff', 'Goldblum', 'Jeff_Goldblum', '9098621232', 'jeff_goldblum@jurrassic.com', 'Dinosaurs', '@jeff_goldblum', 'https://i.imgur.com/4uxDCLC.jpg', 'My house got destroyed by a T-Rex during Jurrassic World - dominion. Looking for a roommate who can handle being chased by dinosaurs and safeguard my belongings while I save the world 🦖', 'Los Angeles', TRUE),
->>>>>>> 4f1fe3b375a2ee3ba00158666b3e85b4d48b64e3
 
 ('Blake', 'Lively', 'blake_lively', '3478901022', 'blake_lively@reynolds.com', 'Dinosaurs', '@blakelively', 'https://i.pinimg.com/originals/d8/71/d7/d871d7433730006460afbb9fbbd59363.jpg', 'Looking to find a temporary roommate who loves to bake like I do.', 'Chicago', FALSE),
 
