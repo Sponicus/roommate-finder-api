@@ -24,14 +24,17 @@ module.exports = (db) => {
       console.log('this is the user -->', user)
       console.log('We are on the second promise');
       return db.query(`
-      SELECT user_id, users.user_name, users.bio, male, female, other, pet_friendly
+      SELECT DISTINCT user_id, users.user_name, users.bio, male, female, other, pet_friendly
       FROM preferences
       JOIN users ON users.id = user_id
-      WHERE pet_friendly = $5 
+      FULL JOIN likes ON likee = users.id
+      WHERE pet_friendly = $5
+      AND liker != $1
       AND ((users.gender = TRUE AND male = $2)
       OR (users.gender = FALSE AND female = $3)
       OR (users.gender = NULL AND other = $4))
       AND users.id != $1
+      AND users.id NOT IN (SELECT likee FROM likes WHERE liker = $1) 
       ORDER BY user_id;`, [user, male, female, other, pet_friendly]) 
     })
     // filter out roomies who the user isn't within their preferences
@@ -52,6 +55,7 @@ module.exports = (db) => {
       res.json(filteredPreferences(userGender));
     })    
     .catch((err) => {
+      console.log(err)
       res.status(422).send("something went wrong");// we can make this look pretty
     });
   })
