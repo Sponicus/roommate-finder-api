@@ -30,14 +30,7 @@ module.exports = (db) => {
       .then(response => res.json(userObj))
     })
     .catch((err) => {
-      console.log(err)
-      if (err.detail.includes("already exists") && err.detail.includes("email")) {
-        return res.status(400).send("this email already exists")
-      }
-      if (err.detail.includes("already exists") && err.detail.includes("user_name")) {
-        return res.status(400).send("this username already exists")
-      }
-      return res.status(400).send("something went wrong");// we can make this look pretty
+      res.status(400).send("something went wrong");// we can make this look pretty
     })
   })
 
